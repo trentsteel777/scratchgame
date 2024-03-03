@@ -32,16 +32,23 @@ public class WinCombinationsConfig {
     private WinCombinationConfig sameSymbolsDiagonallyRightToLeft;
 	
 	public WinCombinationConfig fromCount(int count) {
-		return switch(count) {
-			case 3 -> sameSymbol3Times;
-			case 4 -> sameSymbol4Times;
-			case 5 -> sameSymbol5Times;
-			case 6 -> sameSymbol6Times;
-			case 7 -> sameSymbol7Times;
-			case 8 -> sameSymbol8Times;
-			case 9 -> sameSymbol9Times;
-			default -> null;
-		};
+		if (count == 3) {
+		    return sameSymbol3Times;
+		} else if (count == 4) {
+		    return sameSymbol4Times;
+		} else if (count == 5) {
+		    return sameSymbol5Times;
+		} else if (count == 6) {
+		    return sameSymbol6Times;
+		} else if (count == 7) {
+		    return sameSymbol7Times;
+		} else if (count == 8) {
+		    return sameSymbol8Times;
+		} else if (count == 9 || count > 9) {
+		    return sameSymbol9Times;
+		} else {
+		    return null;
+		}
 	}
 	
 	public WinCombinationConfig horizontally() {
